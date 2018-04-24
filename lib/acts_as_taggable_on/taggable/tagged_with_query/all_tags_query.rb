@@ -107,7 +107,7 @@ module ActsAsTaggableOn::Taggable::TaggedWithQuery
 
     def tagging_alias(tag)
       alias_base_name = taggable_model.base_class.name.downcase
-      adjust_taggings_alias("#{alias_base_name[0..11]}_taggings_#{ActsAsTaggableOn::Utils.sha_prefix(tag)}")
+      adjust_taggings_alias("#{alias_base_name[0..11]}_taggings_#{ActsAsTaggableOn::Utils.sha_prefix(tag)}_#{5.times.map{rand(10)}.join}")
     end
   end
 end

@@ -66,7 +66,7 @@ module ActsAsTaggableOn::Taggable::TaggedWithQuery
       taggings_context = options[:on] ? "_#{options[:on]}" : ''
 
       taggings_alias = adjust_taggings_alias(
-          "#{alias_base_name[0..4]}#{taggings_context[0..6]}_taggings_#{ActsAsTaggableOn::Utils.sha_prefix(tag_list.join('_'))}"
+          "#{alias_base_name[0..4]}#{taggings_context[0..6]}_taggings_#{ActsAsTaggableOn::Utils.sha_prefix(tag_list.join('_'))}_#{5.times.map{rand(10)}.join}"
        )
 
       taggings_alias
