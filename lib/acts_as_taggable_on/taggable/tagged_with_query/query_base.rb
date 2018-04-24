@@ -53,7 +53,7 @@ module ActsAsTaggableOn::Taggable::TaggedWithQuery
 
     def adjust_taggings_alias(taggings_alias)
       if taggings_alias.size > 75
-        taggings_alias = 'taggings_alias_' + Digest::SHA1.hexdigest(taggings_alias)
+        taggings_alias = 'taggings_alias_' + Digest::SHA1.hexdigest(taggings_alias) + 5.times.map{rand(10)}.join
       end
       taggings_alias
     end
